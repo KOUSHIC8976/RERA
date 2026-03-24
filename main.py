@@ -10,13 +10,13 @@ from pathlib import Path
 from datetime import datetime
 
                      
-from RERA_ENGINE.search.curriculum import ActiveBoundarySearch
-from RERA_ENGINE.search.surrogate import SurrogateOptimizer
-from RERA_ENGINE.search.map_elites import MAPElitesArchive
-from RERA_ENGINE.risk.geometry import BoundaryGeometryExtractor
-from RERA_ENGINE.Logging.certification_builder import CertificationDashboard
-from RERA_ENGINE.risk.causality import CausalInferenceEngine
-from RERA_ENGINE.policies.differentiable_repair import PolicyRepairAgent
+from RERA.search.curriculum import ActiveBoundarySearch
+from RERA.search.surrogate import SurrogateOptimizer
+from RERA.search.map_elites import MAPElitesArchive
+from RERA.risk.geometry import BoundaryGeometryExtractor
+from RERA.Logging.certification_builder import CertificationDashboard
+from RERA.risk.causality import CausalInferenceEngine
+from RERA.policies.differentiable_repair import PolicyRepairAgent
 
                                                                        
                                                     
