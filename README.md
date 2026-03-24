@@ -1,8 +1,8 @@
 <div align="center">
 
-#  RERA: Rare Event Risk Amplification and Assessment
+# RERA: Rare Event Risk Amplification and Assessment
 
-**An End-to-End Pipeline for Mathematical Boundary Discovery, Causal Root-Cause Extraction, and Automated SOTIF Compliance.**
+**A GPU-accelerated system for discovering failure boundaries, explaining system instability, and generating structured risk assessments from simulation data.**
 
 [![CUDA](https://img.shields.io/badge/CUDA-12.1-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-toolkit)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
@@ -13,11 +13,26 @@
 
 <br/>
 
-> **The Problem:** Standard simulation platforms tell you *if* an Autonomous Vehicle (AV) crashed. 
->
-> **The Solution:** RERA tells you *why* it crashed, exactly what operating conditions are mathematically guaranteed to be safe, and automatically generates the regulatory compliance dossier to prove it.
+> **The Problem:** Simulation systems tell  *when* a failure occurs.  
+> **The Gap:** They rarely explain *why it happened* or *where the system becomes unsafe*.  
+> **RERA:** Identifies rare failure conditions, maps system boundaries, and extracts causal explanations from simulation data.
 
-RERA is a GPU-accelerated validation infrastructure tool designed to orchestrate photorealistic digital twins, mathematically map the safe operating envelopes of autonomous systems, and synthesize auto-repair policy patches.
+---
+
+##  What RERA Does
+
+RERA is a **simulation data analysis and validation pipeline** designed to:
+
+- Discover **rare failure scenarios** in high-dimensional environments  
+- Map **safe vs. unstable operating regions** (Operational Design Domain)  
+- Extract **causal failure chains** from telemetry  
+- Generate **reproducible debugging scenarios**  
+- Produce **structured risk and safety reports**
+
+RERA is not a simulator — it is a **failure analysis and insight layer built on top of simulation environments**.
+
+Most systems answer: Did the system fail?  
+RERA answers: Why did system fail, where will system fail again, and how close system is to that boundary?
 
 ---
 
@@ -29,39 +44,134 @@ RERA is a GPU-accelerated validation infrastructure tool designed to orchestrate
 
 ---
 
-##  Core Architecture 
+##  Core Architecture
 
-The engine executes entirely within an isolated, zero-dependency Docker container, dynamically scaling to consume up to 90% of available VRAM for maximum parallelization.
+RERA runs inside a GPU-accelerated Docker environment and is designed for **high-throughput scenario evaluation and analysis**.
 
-1. **Deep Bayesian Ensemble Search:** Utilizes 5 parallel neural networks to evaluate ~1.4 million scenarios simultaneously in VRAM, filtering "easy" scenarios to hunt the exact mathematical edge of failure.
-2. **Procedural Scene Generation:** Translates mathematical edge cases into photorealistic 3D USD scenes using **NVIDIA Omniverse Replicator**.
-3. **Ray-Traced Physics Execution:** Evaluates the USD scenes using the high-fidelity sensor models of **NVIDIA DRIVE Sim**.
-4. **Boundary Geometry Extraction:** Calculates the Hessian Spectral Norm and Variance Explosions to map the exact "sharpness" (cliff vs. plateau) of the AV's safety boundaries.
-5. **Operational Envelope Certification:** Dynamically clusters failures into Instability Regimes and calculates the Weighted Robustness Margin (RM) with 95% Confidence Intervals.
-6. **Structural Causal Inference:** Extracts Directed Acyclic Graphs (DAGs) from vehicle telemetry to transition from correlation to causation (e.g., proving a crash was a *Perception Fault* vs. a *Control Fault*).
-7. **Automated ISO 21448 (SOTIF) Compliance:** Maps the system's operational limits and causal hazards directly into a formalized JSON dossier for regulatory review.
+### Pipeline Overview
+
+1. **Boundary-Focused Scenario Search**  
+   Uses ensemble-driven exploration to prioritize failure-prone regions instead of random sampling.
+
+2. **Scenario Realization (Digital Twin Integration)**  
+   Converts edge-case parameters into executable simulation scenes (Omniverse / DRIVE Sim compatible).
+
+3. **High-Fidelity Execution**  
+   Runs scenarios with realistic sensor and physics models to capture system behavior under stress.
+
+4. **Boundary Geometry Analysis**  
+   Computes curvature and instability characteristics to distinguish:
+   - gradual degradation  
+   - sharp failure boundaries  
+
+5. **Operational Envelope Mapping**  
+   Identifies:
+   - safe regions  
+   - instability regimes  
+   - robustness margins (RM)
+
+6. **Causal Root-Cause Extraction**  
+   Builds structured failure chains:
+   Environment → Sensor Noise → State Drift → Controller Instability → Failure
+
+7. **Structured Risk Output (SOTIF-Inspired)**  
+   Generates machine-readable reports describing:
+   - system limits  
+   - failure causes  
+   - mitigation requirements  
 
 ---
 
-##  Enterprise Output Artifacts
+## 📦 Outputs
 
-Upon completion, RERA generates a comprehensive suite of audit-grade artifacts saved to the `/results` directory:
+Each run produces a complete analysis package in `/results`:
 
-*  **`certification_report.html`**: An interactive dashboard detailing the mathematically proven Operational Design Domain (ODD), Regime Clusters, and 7D Curvature Metrics.
-*  **`sotif_compliance_dossier.json`**: An automated ISO 21448 compliance export tracking verified safe scenarios and extracted causal hazards.
-*  **`RERA_execution_[TIMESTAMP].log`**: Persistent, timestamped enterprise execution logs ready for CI/CD ingestion (Datadog, CloudWatch).
-*  **`Auto-Repair Patch`**: Mathematical suggestions for controller covariance and PID tuning generated via differentiable backpropagation.
+### certification_report.html
+- Interactive dashboard  
+- Operational Design Domain visualization  
+- Failure regimes and boundary plots  
+- Risk timelines and metrics  
+
+### sotif_compliance_dossier.json
+- Structured system health summary  
+- Verified safe scenarios  
+- Identified hazard conditions  
+- Causal fault classification  
+
+### Execution Logs
+RERA_execution_[TIMESTAMP].log  
+- Full pipeline trace  
+- Suitable for monitoring / CI integration  
+
+### Auto-Repair Suggestions
+- Parameter tuning hints (e.g., controller / covariance adjustments)  
+- Derived from observed failure behavior  
+
+---
+
+##  Key Capabilities
+
+**Rare Event Discovery**  
+Focuses computation on high-risk edge cases.
+
+**Boundary Awareness**  
+Understands where the system stops working.
+
+**Causal Insight**  
+Explains why failures happen.
+
+**Reproducibility**  
+All failure scenarios are replayable and debuggable.
 
 ---
 
 ##  Quick Start
 
-RERA is built for zero-friction deployment. The entire environment (CUDA, PyTorch, Causal engines) is containerized.
+### Clone & Build
+git clone  
+cd RERA_Engine  
+docker build -t rera-engine -f docker/Dockerfile .
 
-### 1. Clone & Build
-```bash
-git clone [https://github.com/YOUR_USERNAME/RERA_Engine.git](https://github.com/YOUR_USERNAME/RERA_Engine.git)
-cd RERA_Engine
+### Run
+docker run --gpus all rera-engine
 
-# Build the GPU-accelerated container
-docker build -t RERA-engine -f docker/Dockerfile .
+---
+
+##  Use Cases
+
+- Autonomous driving validation  
+- Robotics simulation testing  
+- Edge-case discovery  
+- Simulation data analysis  
+- Debugging unstable control systems  
+
+---
+
+## 🔗 Dependencies & Acknowledgements
+
+RERA builds on top of:
+
+SMARTS (Scalable Multi-Agent Reinforcement Learning Training School)  
+https://github.com/huawei-noah/SMARTS  
+
+RERA extends SMARTS with:
+- boundary-focused search  
+- failure analysis  
+- causal extraction  
+- robustness evaluation  
+- structured reporting  
+
+RERA is a **simulation analysis layer**, not a simulator.
+
+---
+
+##  Notes
+
+- Provides risk assessment, not certification  
+- SOTIF outputs are approximations  
+- Designed for engineering insight  
+
+---
+
+
+
