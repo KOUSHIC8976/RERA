@@ -1,0 +1,31 @@
+# RERA Default Experiment Configuration
+
+experiment_name: "rera_mixed_autonomy_baseline"
+device: "cuda"
+
+simulation:
+  num_parallel_envs: 16       
+  max_steps_per_episode: 1000 
+  total_training_steps: 5000  
+
+risk_engine:
+  ras_threshold: 0.85         
+  ttc_threshold: 1.5          
+  weights:
+    ttc: 1.5
+    distance: 1.0
+    jerk: 0.5
+
+adversarial_agent:
+  obs_dim: 10                 
+  action_dim: 5               
+  learning_rate: 0.0003
+
+sweep_grid:
+  traffic_density: [0.2, 0.4, 0.6, 0.8]
+  env_friction: [1.0, 0.7, 0.4]
+  autonomy_penetration: [0.1, 0.5, 0.9]
+
+logging:
+  output_dir: "./results/run_001"
+  save_checkpoints: true
