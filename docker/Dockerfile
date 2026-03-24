@@ -36,7 +36,7 @@ RUN pip3 install --no-cache-dir pandas matplotlib seaborn pyyaml tqdm gymnasium 
 COPY ./ /app/RERA_ENGINE
 
 # 6. Set Python paths
-ENV PYTHONPATH="/app:/app/RERA_ENGINE"
+ENV PYTHONPATH="/app:/app/RERA"
 
 # 7. Run the full enterprise pipeline
-CMD ["python3", "/app/RERA_ENGINE/main.py", "--config", "/app/RERA_ENGINE/configs/default.yaml"]
+CMD ["python3", "/app/RERA/main.py", "--config", "/app/RERA/configs/default.yaml"]
