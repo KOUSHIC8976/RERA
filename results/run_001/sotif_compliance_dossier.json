@@ -1,10 +1,10 @@
 {
     "certification_standard": "ISO 21448 (SOTIF)",
-    "timestamp": "20XX-XX-XXTHH:MM:SS",
+    "timestamp": "2026-04-11T18:22:17.120858",
     "system_health": {
         "overall_robustness_margin": 0.09,
-        "verified_safe_scenarios": 27,
-        "unstable_edge_cases_discovered": 2
+        "verified_safe_scenarios": 20,
+        "unstable_edge_cases_discovered": 116
     },
     "operational_design_domain_limits": {
         "max_verified_traffic_density": 1.0,

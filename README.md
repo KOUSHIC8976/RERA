@@ -39,7 +39,7 @@ RERA answers: Why did system fail, where will system fail again, and how close s
 ##  See it in Action
 
 <div align="center">
-  <img src="output/Output.png" alt="RERA Execution Demo" width="800"/>
+  <img src="docs/Output.png" alt="RERA Execution Demo" width="800"/>
 </div>
 
 ---
@@ -82,7 +82,7 @@ RERA runs inside a GPU-accelerated Docker environment and is designed for **high
 
 ---
 
-## 📦 Outputs
+##  Outputs
 
 Each run produces a complete analysis package in `/results`:
 

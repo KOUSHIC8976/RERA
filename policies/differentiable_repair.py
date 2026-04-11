@@ -14,7 +14,7 @@ class PolicyRepairAgent:
         Uses gradient-based tuning to find parameters that minimize system risk[cite: 184, 188, 189].
         """
         print("\n" + "="*40)
-        print("🔧 PHASE 7: Differentiable Policy Repair Initiated")
+        print(" PHASE 7: Differentiable Policy Repair Initiated")
         print("="*40)
         
                                                                  
@@ -48,7 +48,7 @@ class PolicyRepairAgent:
 
     def _generate_semantic_bug_report(self, optimized_kalman, optimal_pid, risk_reduction):
         """Generates a human-readable Jira-style bug report[cite: 192]."""
-        print("\n📝 Auto-Generated Bug Report:")
+        print("\n Auto-Generated Bug Report:")
         print("-" * 30)
         print("Detected Issue: Kalman covariance underestimation causing estimator drift.") 
         print(f"Suggested Fix: Increase covariance scaling to {optimized_kalman:.2f}") 

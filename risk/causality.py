@@ -28,7 +28,7 @@ class CausalInferenceEngine:
         w_mpc_sat = df['MPC_Oscillation'].corr(df['Control_Saturation'])
 
         print("\n" + "="*40)
-        print("🔍 PHASE 6: CAUSAL Root-Cause DAG Extraction")
+        print(" PHASE 6: CAUSAL Root-Cause DAG Extraction")
         print("="*40)
         print(f"Sensor Noise -> Estimator Drift : Weight {w_sensor_est:.2f}")
         print(f"Estimator Drift -> MPC Oscillation: Weight {w_est_mpc:.2f}") 
@@ -40,5 +40,5 @@ class CausalInferenceEngine:
         else:
             fault_type = "Algorithmic Fault (Controller instability)"
             
-        print(f"\n🚨 Primary Systemic Root Cause: {fault_type}")
+        print(f"\n Primary Systemic Root Cause: {fault_type}")
         return fault_type

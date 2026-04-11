@@ -1,0 +1,37 @@
+# =========================================================
+# RERA: Client Certification Configuration
+# =========================================================
+experiment_name: "production_audit_001"
+device: "cuda"
+
+# ---------------------------------------------------------
+# 1. Pipeline Execution Parameters
+# ---------------------------------------------------------
+pipeline:
+  iterations: 200 
+  target_vram_utilization: 0.90  # RERA will automatically scale to your GPU
+
+# ---------------------------------------------------------
+# 2. Operational Design Domain (ODD) Limits
+# Define the physical bounds you want the engine to test.
+# ---------------------------------------------------------
+operational_design_domain_bounds:
+  traffic_density: [0.1, 1.0]      # e.g., 10% to 100% max road capacity
+  env_friction: [0.0, 1.0]         # e.g., 0.0 (Black Ice) to 1.0 (Dry Asphalt)
+  autonomy_penetration: [0.0, 1.0] # e.g., Mix of human vs. AI drivers
+
+# ---------------------------------------------------------
+# 3. Output Artifacts & CI/CD
+# ---------------------------------------------------------
+logging:
+  output_dir: "./results/run_001"
+  generate_sotif_dossier: true     # Auto-generates ISO 21448 JSON report
+
+# ---------------------------------------------------------
+# 4. Simulation API (Client Hooks)
+# Point this to your proprietary USD scene or map asset.
+# ---------------------------------------------------------
+simulation:
+  map_path: "/app/RERA/omniverse_assets/base_map.usd"
+
+#MAKE THE CHANGES TO DEFAULT.YAML IN THE ROOT DIRECTORY OF RERA, NOT THIS FILE. THIS FILE IS JUST AN EXAMPLE.

@@ -178,4 +178,4 @@ class CertificationDashboard:
             f.write(fig_surface.to_html(full_html=False, include_plotlyjs=False))
             f.write("</div></body></html>")
             
-        print(f"✅ Dashboard generated successfully: {html_path}")
+        print(f" Dashboard generated successfully: {html_path}")
