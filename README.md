@@ -129,11 +129,11 @@ All failure scenarios are replayable and debuggable.
 
 ### Clone & Build
 git clone  
-cd RERA_Engine  
-docker build -t rera-engine -f docker/Dockerfile .
+cd RERA
+docker build -t rera -f docker/Dockerfile .
 
 ### Run
-docker run --gpus all rera-engine
+docker run --rm --gpus all -v "%cd%\results:/app/results" rera
 
 ---
 
