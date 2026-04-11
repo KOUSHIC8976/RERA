@@ -39,7 +39,7 @@ RERA answers: Why did system fail, where will system fail again, and how close s
 ##  See it in Action
 
 <div align="center">
-  <img src="docs/assets/pipeline_demo.gif" alt="RERA Execution Demo" width="800"/>
+  <img src="output/Output.png" alt="RERA Execution Demo" width="800"/>
 </div>
 
 ---
