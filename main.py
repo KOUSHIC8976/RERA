@@ -18,9 +18,7 @@ from RERA.Logging.certification_builder import CertificationDashboard
 from RERA.risk.causality import CausalInferenceEngine
 from RERA.policies.differentiable_repair import PolicyRepairAgent
 
-                                                                       
-                                                    
-                                                                       
+                                                                     
 def setup_logging(output_dir):
     log_file = Path(output_dir) / f"RERA_execution_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
     logging.basicConfig(
@@ -30,9 +28,7 @@ def setup_logging(output_dir):
     )
     return logging.getLogger("RERA_CORE")
 
-                                                                       
-                                                      
-                                                                       
+                                                                   
 class SOTIFComplianceExporter:
     """Maps RERA metrics into ISO 21448 SOTIF standard compliance output."""
     def __init__(self, output_dir):
@@ -92,12 +88,7 @@ class MockNvidiaDriveSim:
         
         noise = random.uniform(0.01, 0.02) + (0.1 * mock_env_stress)
         drift = random.uniform(0.05, 0.1) + (0.2 * mock_env_stress)
-        oscillation = random.uniform(0.05, 0.1) + (0.3 * mock_env_stress)
-        
-                                 
-                                                                       
-                                                                                         
-                                                                       
+        oscillation = random.uniform(0.05, 0.1) + (0.3 * mock_env_stress)                                                                    
         saturation = min(1.0, random.uniform(0.01, 0.05) + (mock_env_stress ** 1.5))
         
         return mock_systemic_risk, {"mean_state_drift": drift, "max_state_drift": drift * 1.5, "control_saturation_rate": saturation}
@@ -112,10 +103,7 @@ def calculate_max_gpu_batch(device_name, target_utilization=0.90, logger=None):
         logger.info(f"Hardware Detected : {torch.cuda.get_device_name(device_name)}")
         logger.info(f"Parallel Capacity : {max_batch:,} simultaneous surrogate evaluations")
     return max_batch
-
-                                                                       
-                    
-                                                                       
+                                                                                  
 def main():
     parser = argparse.ArgumentParser(description="RERA: Rare Event Risk Amplification and Assessment")
     parser.add_argument("--config", type=str, default="client_config.yaml", help="Path to the client configuration YAML.")
