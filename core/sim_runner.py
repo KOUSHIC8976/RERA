@@ -29,9 +29,9 @@ class ScenarioDiscoveryRunner:
         self.num_envs = num_envs
         self.max_steps = max_steps
         
-        print(f"Initializing RRAE Runner on {self.device} with {num_envs} parallel SMARTS environments...")
+        print(f"Initializing RERA Runner on {self.device} with {num_envs} parallel SMARTS environments...")
         
-        print(f"Initializing RRAE Runner on {self.device} with {num_envs} parallel SMARTS environments...")
+        print(f"Initializing RERA Runner on {self.device} with {num_envs} parallel SMARTS environments...")
         
                                                                           
                                                                                      
