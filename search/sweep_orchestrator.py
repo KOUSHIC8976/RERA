@@ -1,6 +1,7 @@
 import itertools
 import json
 import os
+import random
 from pathlib import Path
                                                           
 
@@ -36,19 +37,7 @@ class SweepOrchestrator:
             config = dict(zip(keys, combo))
             print(f"\n--- Running Sweep {idx+1}/{len(combinations)} ---")
             print(f"Config: {config}")
-            
-                                                                             
-                                                          
-            
-                                                                                    
-                                                                           
-            
-                                                     
-                          
-                                                                         
-            
-                                                              
-            import random
+
             collapse_count = int(config["traffic_density"] * 100) + random.randint(0, 20)
             if config["env_friction"] == 0.4:
                 collapse_count += 50                                
