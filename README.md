@@ -128,13 +128,16 @@ All failure scenarios are replayable and debuggable.
 ##  Quick Start
 
 ### Clone & Build
-git clone  
+git clone
+
 cd RERA
+
 docker build -t rera -f docker/Dockerfile .
 
 ### Run
 docker run --rm --gpus all -v "%cd%\results:/app/results" rera
 
+Refer docs/User Manual for detailed usage.
 ---
 
 ##  Use Cases
