@@ -2,7 +2,7 @@ import numpy as np
 
 class MAPElitesArchive:
     """
-    State-of-the-Art Quality-Diversity algorithm. 
+    Quality-Diversity algorithm. 
     Maintains an archive of the "highest risk" scenarios discovered across 
     a discretized grid of macro-conditions, perfectly mapping the phase transition.
     """
