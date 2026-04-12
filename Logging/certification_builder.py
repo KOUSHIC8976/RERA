@@ -6,8 +6,8 @@ import json
 
 class CertificationDashboard:
     """
-    Enterprise Robustness Certification Engine.
-    Generates Audit-Grade HTML Dashboards with Confidence Intervals and Visual Replay Packs.
+    Robustness Engine.
+    Generates HTML Dashboards with Confidence Intervals and Visual Replay Packs.
     """
     def __init__(self, output_dir: str):
         self.output_dir = Path(output_dir)
@@ -130,7 +130,7 @@ class CertificationDashboard:
         df = pd.DataFrame(self.logs)
         if df.empty: return
 
-        print("\n[Phase 5] Compiling Enterprise Robustness Certification Dashboard...")
+        print("\n[Phase 5] Compiling Robustness Dashboard...")
         
         envelope_and_rm_html = self.calculate_robustness_margin_and_envelope(df)
         regimes_html = self.detect_instability_regimes(df)
@@ -161,9 +161,9 @@ class CertificationDashboard:
                             
         html_path = self.output_dir / "certification_report.html"
         with open(html_path, 'w') as f:
-            f.write("<html><head><title>RRAE Audit Dashboard</title></head><body style='font-family: Arial; padding: 30px; background-color: #f4f6f9;'>")
+            f.write("<html><head><title>RERA Dashboard</title></head><body style='font-family: Arial; padding: 30px; background-color: #f4f6f9;'>")
             f.write("<div style='background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);'>")
-            f.write("<h1 style='color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;'>RRAE: Autonomous System Robustness Certification</h1>")
+            f.write("<h1 style='color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;'>RERA: Rare Event Risk Amplification and Assessment </h1>")
             
             f.write("<div style='display: flex; gap: 40px; margin-top: 20px;'>")
             f.write("<div style='flex: 1;'>" + envelope_and_rm_html + cascade_html + "</div>")
