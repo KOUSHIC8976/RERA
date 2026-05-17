@@ -35,11 +35,20 @@ Most systems answer: Did the system fail?
 RERA answers: Why did system fail, where will system fail again, and how close system is to that boundary?
 
 ---
+## Demo
 
-##  See it in Action
+https://github.com/user-attachments/assets/47bfcd01-dca5-4f78-9780-2071272e7d97
+
+---
+
+##  Results
 
 <div align="center">
-  <img src="docs/Output.png" alt="RERA Execution Demo" width="800"/>
+  <img src="docs/Rera_1.png" alt="RERA Execution Demo" width="800"/>
+  
+  <img src="docs/Rera_2.png" alt="RERA Execution Demo" width="800"/>
+  
+  <img src="docs/Rera_3.png" alt="RERA Execution Demo" width="800"/>
 </div>
 
 ---
