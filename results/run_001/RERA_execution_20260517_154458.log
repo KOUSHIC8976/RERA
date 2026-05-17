@@ -1,0 +1,18 @@
+2026-05-17 15:45:08,445 [INFO] Initializing RERA Pipeline
+2026-05-17 15:45:08,542 [INFO] GPU SCALING
+2026-05-17 15:45:08,543 [INFO] Hardware Detected : NVIDIA GeForce RTX 4050 Laptop GPU
+2026-05-17 15:45:08,544 [INFO] Parallel Capacity : 1,414,771 simultaneous surrogate evaluations
+2026-05-17 15:45:09,424 [INFO] Executing Active Boundary Search (200 Iterations)
+2026-05-17 15:45:09,815 [INFO] Iteration 1/200 | AV Control Saturation: 4.6%
+2026-05-17 15:45:11,964 [INFO] Iteration 8/200 | AV Control Saturation: 17.6%
+2026-05-17 15:45:17,048 [INFO] Iteration 26/200 | AV Control Saturation: 2.8%
+2026-05-17 15:45:24,048 [INFO] Iteration 51/200 | AV Control Saturation: 1.2%
+2026-05-17 15:45:31,049 [INFO] Iteration 76/200 | AV Control Saturation: 2.3%
+2026-05-17 15:45:38,045 [INFO] Iteration 101/200 | AV Control Saturation: 4.9%
+2026-05-17 15:45:45,041 [INFO] Iteration 126/200 | AV Control Saturation: 2.7%
+2026-05-17 15:45:52,040 [INFO] Iteration 151/200 | AV Control Saturation: 2.9%
+2026-05-17 15:45:59,131 [INFO] Iteration 176/200 | AV Control Saturation: 2.1%
+2026-05-17 15:46:06,044 [INFO] Compiling Dashboard
+2026-05-17 15:46:06,189 [INFO] Generating ISO 21448 SOTIF Compliance Dossier
+2026-05-17 15:46:06,200 [INFO] SOTIF Dossier saved to: results/run_001/sotif_compliance_dossier.json
+2026-05-17 15:46:06,349 [INFO]  Full Pipeline Complete. Data saved to: ./results/run_001
