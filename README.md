@@ -35,6 +35,13 @@ Most systems answer: Did the system fail?
 RERA answers: Why did system fail, where will system fail again, and how close system is to that boundary?
 
 ---
+## Architecture
+<div align="center">
+<img src="https://github.com/KOUSHIC8976/RERA/blob/main/docs/Architecture.png"/>
+</div>
+
+---
+
 ## Demo
 
 https://github.com/user-attachments/assets/47bfcd01-dca5-4f78-9780-2071272e7d97
